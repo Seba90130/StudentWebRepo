@@ -1,0 +1,28 @@
+﻿@model StudentsWeb.Models.Student
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<h1 class="text-center">STUDENTS CRUD</h1>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card border">
+            <div class="card-header">
+                <h3><strong>Students Details</strong></h3>
+            </div>
+             <div class="card-body">
+                <ul class="list-group">
+                  <li class="list-group-item"><strong>Nombre: </strong>@Html.DisplayFor(m => m.Name)</li>
+                  <li class="list-group-item"><strong>Birthday: </strong>@Html.DisplayFor(m => m.Birthday)</li>
+                  <li class="list-group-item"><strong>Grade: </strong>@Html.DisplayFor(m => m.Grade)</li>
+                  <li class="list-group-item"><strong>State: </strong>@Html.DisplayFor(m => m.State)</li>                 
+                </ul>
+                <div class="form-group mt-3"> 
+                 <a href="/home" class="btn btn-outline-success"><i class="bi bi-box-arrow-left"></i> Go back</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
