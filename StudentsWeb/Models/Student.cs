@@ -16,6 +16,7 @@ namespace StudentsWeb.Models
         [DisplayFormat(DataFormatString ="{0:dd MM yyyy}")]
         [DataType(DataType.Date)]
         [Required(ErrorMessage = "The birthday is obligatory")]
+        [MinimunAge(16, ErrorMessage ="The student must be 16")]
         public DateTime Birthday { get; set; }
 
         internal static Task<string?> ToListAsync()

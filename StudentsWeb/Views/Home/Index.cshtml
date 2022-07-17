@@ -42,10 +42,10 @@
                                 @foreach(var item in Model)
                                 {
                                     <tr>
-                                        <td>@Html.DisplayNameFor(m => item.Name)</td>
-                                        <td>@Html.DisplayNameFor(m => item.Birthday)</td>
-                                        <td>@Html.DisplayNameFor(m => item.Grade)</td>
-                                        <td>@Html.DisplayNameFor(m => item.State)</td>
+                                        <td>@Html.DisplayFor(m => item.Name)</td>
+                                        <td>@Html.DisplayFor(m => item.Birthday)</td>
+                                        <td>@Html.DisplayFor(m => item.Grade)</td>
+                                        <td>@Html.DisplayFor(m => item.State)</td>
                                         <td>
                                             <a class="btn btn-primary" asp-action="Edit" asp-route-id ="@item.Id"><i class="bi bi-pencil-fill"></i> Edite</a>
                                             <a class="btn btn-secondary" asp-action="Details" asp-route-id ="@item.Id"><i class="bi bi-info-circle-fill"></i> Details</a>
