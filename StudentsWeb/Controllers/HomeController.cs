@@ -17,7 +17,13 @@ namespace StudentsWeb.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Student.ToListAsync());
+            return View(await _context.Student.Where(x => x.State == "ACTIVO").ToListAsync());
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Admin()
+        {
+            return View(await _context.Student.Where(x => x.State == "INACTIVO").ToListAsync());
         }
 
         [HttpGet]
@@ -107,12 +113,13 @@ namespace StudentsWeb.Controllers
         public async Task<IActionResult> DeleteStudent(int? id)
         {
             var student = await _context.Student.FindAsync(id);
+            
             if (student == null)
             {
                 return View();
             }
 
-            _context.Student.Remove(student);
+            student.State = "INACTIVO";
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
