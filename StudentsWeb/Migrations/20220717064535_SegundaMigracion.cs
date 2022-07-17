@@ -23,10 +23,10 @@ namespace StudentsWeb.Migrations
                 {
                     table.PrimaryKey("PK_Student", x => x.Id);
                     table.UniqueConstraint(
-                        name: "Name",
-                        columns: x => x.Name);
-                    
-                });
+                        name: "Unique_Name",
+                       columns: x => x.Name);
+                }
+                );
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

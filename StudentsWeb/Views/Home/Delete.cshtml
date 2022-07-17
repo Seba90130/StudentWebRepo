@@ -17,41 +17,15 @@
                    <!--ID del usuario como campo oculto-->
                    <input type="hidden" form="Id" />
 
-                   <div class="form-group">
-                        <label asp-for="Name" class="control-label"></label>
-                        <input asp-for="Name" class="form-control" placeholder="Type the student name"/>
-                        <span asp-validation-for="Name" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="Birthday" class="control-label"></label>
-                        <input asp-for="Birthday" class="form-control"/>
-                        <span asp-validation-for="Birthday" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="Grade" class="control-label"></label>
-                        <select asp-for="Grade" class="form-control"  placeholder="Select the student grade">
-                            <option>1ST GRADE</option>
-                            <option>2ND GRADE</option>
-                            <option>3RD GRADE</option>
-                            <option>4TH GRADE</option>
-                            <option>5TH GRADE</option>
-                            <option>6TH GRADE</option>
-                        </select>
-                        <span asp-validation-for="Grade" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="State" class="control-label"></label>
-                        <select asp-for="State" class="form-control"  placeholder="Select the student state">
-                            <option>ACTIVO</option>
-                            <option>INACTIVO</option>
-                        </select>
-                        <span asp-validation-for="State" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group mt-3">
+                   <div class="card-body">
+                <ul class="list-group">
+                  <li class="list-group-item"><strong>Nombre: </strong>@Html.DisplayFor(m => m.Name)</li>
+                  <li class="list-group-item"><strong>Birthday: </strong>@Html.DisplayFor(m => m.Birthday)</li>
+                  <li class="list-group-item"><strong>Grade: </strong>@Html.DisplayFor(m => m.Grade)</li>
+                  <li class="list-group-item"><strong>State: </strong>@Html.DisplayFor(m => m.State)</li>                 
+                </ul>
+                </div>
+                   <div class="form-group mt-3">
                         <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want delete this item?')"><i class="bi bi-eraser-fil"></i> Delete Student</button>
                         <a href="/home" class="btn btn-outline-success"><i class="bi bi-x-square"></i> Cancel</a>
                    </div>
